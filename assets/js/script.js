@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (totalScore >= 6) {
         resultDiv.innerText += "\nYou might benefit from bookkeeping help. Redirecting...";
         setTimeout(() => {
-          window.location.href = "format1040.html";
+          window.location.href = "feedback.html";
         }, 3000);
       } else {
         resultDiv.innerText += "\nYou're doing great! Keep it up.";
