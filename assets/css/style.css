@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to right, #33008a, #9E0059);
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: white;
+  color: #333;
+  max-width: 700px;
+  width: 90%;
+  margin-top: 50px;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.question {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin: 0.4rem 0;
+  cursor: pointer;
+}
+
+button {
+  background-color: #33008a;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  margin: 1.5rem auto 0;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #21005f;
+}
+
+#result {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: #33008a;
+    background-color: #f0f0ff;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid #33008a;
+  }
+
+.hidden {
+  display: none;
+}
+
+
+
+
+/*-------------------------------------------------------- Format*/
+
+p {
+  font-size: 1.2rem;
+}
+
+.card {
+  background: #f0f0f0;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.card h2 {
+  color: #33008a;
+  margin-bottom: 0.8rem;
+}
+
+.card ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+
+.button {
+  display: inline-block;
+  background-color: #33008a;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #21005f;
+}
