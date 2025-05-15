@@ -1,39 +1,36 @@
 /* jshint esversion: 6 */
 
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("quiz-form");
-    const resultDiv = document.getElementById("result");
-  
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-  
-      let totalScore = 0;
-      const formData = new FormData(form);
-  
-      for (let [key, value] of formData.entries()) {
-        totalScore += parseInt(value, 10);
-      }
-  
-      resultDiv.classList.remove("hidden");
-      resultDiv.innerText = `Your Score: ${totalScore} / 10`;
-  
-      if (totalScore >= 6) {
-        resultDiv.innerText += "\nYou might benefit from bookkeeping help. Redirecting...";
-        setTimeout(() => {
-          window.location.href = "feedback.html";
-        }, 3000);
-      } else {
-        resultDiv.innerText += "\nYou're doing great! Keep it up.";
-      }
+document.addEventListener("DOMContentLoaded", () => {
+  const revealBtn = document.getElementById("revealBtn");
+  const backBtn = document.getElementById("backBtn");
+  const cards = document.querySelectorAll(".card");
+  const cardContainer = document.querySelector(".card-container");
 
-      resultDiv.classList.remove("hidden");
-resultDiv.classList.add("alert", "alert-info", "mt-3");
+  revealBtn.addEventListener("click", () => {
+    cardContainer.classList.remove("hidden");
+    revealBtn.style.display = "none";
+    backBtn.style.display = "inline-block";
+  });
 
-
-
-
-
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      if (document.querySelector(".card.flipped")) return;
+      card.classList.add("flipped");
     });
   });
+
+  backBtn.addEventListener("click", () => {
+    // Reset UI
+    cardContainer.classList.add("hidden");
+    revealBtn.style.display = "inline-block";
+    revealBtn.disabled = false;
+    backBtn.style.display = "none";
+
+    // Reset all cards
+    cards.forEach(card => card.classList.remove("flipped"));
+  });
+});
+
+
   
   
