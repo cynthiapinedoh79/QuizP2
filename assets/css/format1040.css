@@ -1,0 +1,787 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Macondo&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+
+:root {
+    --primary-font: "Inter", sans-serif;
+    --secondary-font: "Lato", cursive;
+    --primary-text-color: #000000;
+    --secondary-text-color: #ffffff;
+    --primary-color: #33008a;
+    --secondary-color: #9E0059;
+    --third-color: #ff0054;
+    --fourth-color: #ff5400;
+    --fifth-color: #ffbd00;
+
+    --highlight-color: #330582;
+    --highlight-color-light: #1a006f1f;
+    --border-input: #1a006f42;
+    --bgFbk-color: #f3eef2;
+}
+
+
+.format1040-wrapper body {
+    font-family: var(--primary-font);
+    margin: 0;
+    padding: 0;
+}
+
+.format1040-wrapper h1,
+h2,
+h3 {
+    font-family: var(--secondary-font);
+    color: var(--primary-text-color);
+    font-weight: 700;
+    background-color: var(--secondary-text-color);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.format1040-wrapper h2 {
+    color: var(--fourth-color);
+    background-color: var(--secondary-text-color);
+    font-weight: 500;
+    text-align: left;
+}
+
+
+.format1040-wrapper h4 {
+    color: var(--secondary-text-color);
+    background-color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+
+.format1040-wrapper p {
+    color: var(--primary-color);
+    width: auto;
+    text-align: left;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+
+
+.format1040-wrapper #header {
+    padding-top: 2rem;
+}
+
+
+.format1040-wrapper button.btn.btn-primary {
+    border: none;
+    width: fit-content;
+    font-weight: bold;
+    color: var(--fifth-color);
+    background-color: var(--secondary-color);
+    text-align: center;
+    font-size: 110%;
+    display: block;
+    margin: 0 auto;
+    padding: 0.25rem 1rem;
+}
+
+.format1040-wrapper button.btn.btn-primary:hover {
+    border: none;
+    background-color: var(--fifth-color);
+    color: var(--secondary-color);
+    font-size: 120%;
+}
+
+.format1040-wrapper section {
+    border: none;
+    background-color: var(--secondary-text-color);
+    color: var(--secondary-text-color);
+        /* FLEX PARENT PROPERTIES */
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* forms */
+.format1040-wrapper form {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: left;
+    overflow:scroll;
+    max-width: 100%;
+    overflow-x: auto;;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+
+
+.format1040-wrapper #ms-form.container-fluid {
+    vertical-align: middle;
+    margin: 0;
+    padding: 5px;
+    /* FLEX PARENT PROPERTIES */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-content:flex-start;
+    align-items: flex-start;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.format1040-wrapper div#f1040 {
+    border: 1px solid var(--border-color);
+    align-items: flex-start;
+    vertical-align: middle;
+    margin: 0;
+    padding: 5px;
+}
+
+.format1040-wrapper div.container-fluid {
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+    vertical-align: middle;
+    margin: 0;
+    padding: 5px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+.format1040-wrapper form label {
+    font-family: var(--secondary-font);
+    font-weight: 500;
+    color: var(--primary-color);
+    width: auto;
+    padding: 2.5px;
+    justify-content: left;
+    text-align: left;
+    display: inline;
+    position: relative;
+}
+
+.format1040-wrapper .form-check-input[type=radio] {
+    border: 1px solid var(--border-input);
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+    margin-top: 0.25em;
+    justify-content: center;
+    display: inline;
+    position: relative;
+}
+
+.format1040-wrapper .form-check-input[type=checkbox] {
+    border: 1px solid var(--border-input);
+    margin-top: 0.25em;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+    justify-content: center;
+    display: inline;
+}
+
+.format1040-wrapper .form-check-input:checked {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.format1040-wrapper input.form-control {
+    border: 0.5px solid var(--border-input);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.format1040-wrapper input#expr.form-control {
+    width: 75px;
+    border: 0.5px solid var(--border-input);
+}
+
+
+
+.format1040-wrapper input:required:invalid {
+    border: 2px solid var(--border-input) !important;
+  }
+  
+
+/* Valid state for inputs */
+.format1040-wrapper input.form-control.is-valid,
+.was-validated input.form-control:valid {
+  border: 1px solid var(--border-input);
+  background-image: none;
+}
+
+/* Invalid state for inputs */
+.format1040-wrapper
+input.form-control.is-invalid,
+.was-validated input.form-control:invalid {
+  border: 1.5px solid var(--fourth-color) !important;
+  outline: 0.5px solid var(--fourth-color);
+  outline-offset: 0px;
+}
+
+/* Valid state for checkboxes */
+.format1040-wrapper
+.form-check-input.is-valid,
+.was-validated .form-check-input:valid {
+  border-color: var(--highlight-color);
+}
+
+/* Invalid state for checkboxes */
+.format1040-wrapper
+.form-check-input.is-invalid,
+.was-validated .form-check-input:invalid {
+  border: 1.5px solid var(--fourth-color) !important;
+  outline: 0.5px solid var(--fourth-color);
+}
+
+/* Valid checkbox label color */
+.format1040-wrapper
+.form-check-input.is-valid ~ .form-check-label,
+.was-validated .form-check-input:valid ~ .form-check-label {
+  color: var(--highlight-color);
+}
+
+/* Checked valid checkbox background */
+.format1040-wrapper
+.form-check-input.is-valid:checked,
+.was-validated .form-check-input:valid:checked {
+  background-color: var(--secondary-color);
+}
+
+/* Valid state for selects */
+.format1040-wrapper
+.form-select.is-valid,
+.was-validated .form-select:valid {
+  border: 1px solid var(--border-input);
+}
+.format1040-wrapper
+.form-select.is-invalid,
+.was-validated .form-select:invalid {
+  border: 2px solid var(--fourth-color) !important;
+}
+.format1040-wrapper
+.is-invalid input[type="checkbox"] {
+    border: 1.5px solid var(--fourth-color) !important;;
+  outline: 0.5px solid var(--fourth-color)!important;
+  }
+
+  /* Example: hide checkmark in custom select */
+  .format1040-wrapper
+.select-with-check::after {
+    display: none !important;
+  }
+  .format1040-wrapper
+  select:valid {
+    background-image: none !important; /* hide default checkmark */
+    box-shadow: none !important;       /* remove any green glow */
+  }
+
+
+
+
+
+  .format1040-wrapper fieldset {
+    border: none;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+    position: relative;
+    text-align: left;
+    justify-items: left;
+    align-content: flex-start;
+    align-items: flex-start;
+    vertical-align: middle;
+}
+
+.format1040-wrapper fieldset div {
+    align-content:center;
+    align-items: flex-start;
+}
+
+.format1040-wrapper #gi-form fieldset{
+    background-color: var(--highlight-color-light);
+    display: flex;
+    width: 100%;
+}
+.format1040-wrapper
+#tpi-form fieldset{
+    background-color: var(--highlight-color-light);
+    display: flex;
+    width: 100%;
+}
+.format1040-wrapper
+#fsae fieldset{
+    background-color: var(--highlight-color-light);
+}
+.format1040-wrapper
+#fsae fieldset,
+#fsae .box.container-fluid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items:flex-start;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.format1040-wrapper
+#fsae .form-check,
+#fsae .form-label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+
+
+.format1040-wrapper
+legend {
+    position: relative;
+    display:flex;
+    height: auto;
+    max-width: 130px;
+    min-width: 130px;
+    background-color: var(--highlight-color-light);
+    text-transform: uppercase;
+    border: none;
+    font-family: var(--secondary-font);
+    font-weight: 600;
+    color: var(--secondary-color);
+    background-color: transparent;
+    font-size: medium;
+    text-align: left;
+    align-content: center;
+    padding: 10px;
+    margin: 0;
+}
+
+.format1040-wrapper
+legend#b-legend-left {
+    max-width: 130px;
+    min-width: 130px;
+    margin: 0;
+    align-items: center;
+}
+
+.format1040-wrapper
+select.form-select.form-control {
+    border: 1px solid var(--border-input);
+    width: auto;
+    font-size: smaller;
+}
+
+.format1040-wrapper
+select#dsol.form-select.form-control {
+    border: 1px solid var(--border-input);
+    width: auto;
+    font-size: smaller;
+}
+
+.format1040-wrapper
+input.form-control[type="date"] {
+    font-size: smaller;
+}
+
+.format1040-wrapper
+#j-info-btn.form-control,
+#fa-info-btn.form-control {
+    border: 1px solid var(--border-input);
+    background-color: var(--bgFbk-color);
+    color: var(--secondary-color);
+    font-size: 102%;
+    padding: 5px;
+    margin: 5px;
+    align-content: center;
+}
+
+.format1040-wrapper 
+#j-info-btn:hover,
+#fa-info-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--secondary-text-color);
+    font-size: 110%;
+}
+
+.format1040-wrapper 
+button#vage, button#svage {
+    border: none;
+    color: var(--third-color);
+    background-color: var(--bgFbk-color);
+    font-size: small;
+    font-weight: 550;
+    padding: 0.1rem;
+    text-align: center;
+}
+
+.format1040-wrapper 
+button#vage:hover, button#svage:hover {
+    border: none;
+    color: var(--bgFbk-color);
+    background-color: var(--third-color);
+    text-align: center;
+    font-size: smaller;
+    font-weight: 600;
+}
+
+
+.format1040-wrapper 
+#g-info,
+#j-info,
+#m-address,
+#email-address,
+#phone-number,
+#birth-date,
+#occupation,
+#f-address,
+#signature {
+    border: none;
+    /* FLEX PARENT PROPERTIES */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    /* SPACING PROPERTIES */
+    align-items: center;
+    gap: 15px;
+    flex-basis: auto;
+    height: auto;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+.format1040-wrapper span {
+    color: #b60101;
+    font-size: smaller;
+}
+
+
+
+/*Feedback paragraphs*/
+
+ /*Taxpayerfedback */
+ .format1040-wrapper #fnameFbk,
+#mnameiFbk,
+#emailFbk
+ {
+    color: var(--fourth-color);
+    background-color: var(--bgFbk-color);
+    width: fit-content;
+    font-size: small;
+    padding: 0.1rem;
+    text-align: center;
+    text-align: left;
+}
+
+
+.format1040-wrapper #phoneFbk,
+#zipFbk,
+#ssnFbk,
+#cssnFbk,
+#dobFbk  {
+    background-color: var(--bgFbk-color);
+    width: fit-content;
+    font-size: small;
+    padding: 0.1rem;
+    text-align: center;
+    text-align: left;
+}
+
+
+
+ /*Taxpayer Spouse fedback */
+ .format1040-wrapper
+#sfnameFbk,
+#smnameiFbk,
+#semailFbk
+ {
+    color: var(--fourth-color);
+    background-color: var(--bgFbk-color);
+    width: fit-content;
+    font-size: small;
+    padding: 0.1rem;
+    text-align: center;
+    text-align: left;
+}
+
+.format1040-wrapper
+#sphoneFbk,
+#sssnFbk,
+#csssnFbk, 
+#sdobFbk
+ {
+    background-color: var(--bgFbk-color);
+    width: fit-content;
+    font-size: small;
+    padding: 0.1rem;
+    text-align: center;
+    text-align: left;
+}
+
+/* Classes for feedback */
+.format1040-wrapper 
+.error {
+    color: rgb(244, 3, 3);
+    background-color: var(--bgFbk-color);
+    width: fit-content;
+    font-size: small;
+    padding: 0.1rem;
+    text-align: center;
+    text-align: left;
+  }
+
+
+  .format1040-wrapper .success {
+    color: rgb(2, 116, 2);
+    background-color: var(--bgFbk-color);
+    width: fit-content;
+    font-size: small;
+    padding: 0.1rem;
+    text-align: center;
+    text-align: left;
+  }
+  .format1040-wrapper
+#success a.btn.btn-primary.mb-5 {
+    --bs-btn-color: var(--primary-text-color);
+}
+
+/*Taxpayer Information*/
+
+
+.format1040-wrapper #tpi-form {
+    text-align: left;
+    width: 100%;
+}
+
+.format1040-wrapper #tpi-form p {
+    padding-right: 10px;
+}
+
+.format1040-wrapper div.box.container-fluid {
+    border: none;
+    /* FLEX PARENT PROPERTIES */
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    /* SPACING PROPERTIES */
+    align-items: center;
+    gap: 10px;
+    flex-basis: auto;
+    height: auto;
+    margin-bottom: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.format1040-wrapper div.box.container-fluid p {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.format1040-wrapper div#exprContainer {
+    border: none;
+    /* FLEX PARENT PROPERTIES */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.format1040-wrapper
+#expr,
+#rrf,
+#ifblind,
+#ifdisabled,
+#ifdead,
+#trfby,
+#pec {
+    border: none;
+    /* FLEX PARENT PROPERTIES */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.format1040-wrapper
+div.form-check {
+    margin: 0;
+    padding: 0;
+}
+
+/*Filing Status and exemptions*/
+.format1040-wrapper
+#snra,
+#slwy,
+#aj30,
+#comm-m,
+#comm-o,
+#exemp,
+#pec,
+#stol,
+#dsol,
+#dmsol {
+    border: none;
+    /* FLEX PARENT PROPERTIES */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    vertical-align: middle;
+}
+
+.format1040-wrapper
+#nbxc {
+    width: 75px;
+}
+
+.format1040-wrapper
+.table-responsive {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.format1040-wrapper
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+.format1040-wrapper
+.table {
+    --bs-table-bg: none;
+    border: 1px solid var(--border-input);
+}
+.format1040-wrapper
+.table-light {
+    --bs-table-color: var(--primary-color);
+    --bs-table-bg: var(--highlight-color-light);
+}
+.format1040-wrapper
+th {
+    border: 1px solid var(--border-input);
+    font-family: var(--secondary-font);
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: smaller;
+    padding: 5px;
+    text-align: center;
+    background-color: transparent;
+    text-transform: uppercase;
+}
+.format1040-wrapper
+td {
+    border: 1px solid var(--border-input);
+    font-size: smaller;
+    padding: 1px;
+    text-align: center;
+}
+.format1040-wrapper
+#dmsol label {
+    margin: 0;
+    padding: 0;
+}
+.format1040-wrapper
+hr {
+    border: 2px solid var(--primary-color);
+}
+.format1040-wrapper
+.form-check {
+    display: inline;
+    flex-wrap: wrap;
+
+}
+.format1040-wrapper
+div#atti.upload-section {
+    border: none;
+    /* FLEX PARENT PROPERTIES */
+    display: flex;
+    flex-wrap: wrap;
+
+    /* SPACING PROPERTIES */
+    align-items: flex-start;
+    gap: 10px;
+    flex-basis: auto;
+    height: auto;
+    margin-bottom: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Align everything in the upload section to the left */
+.format1040-wrapper
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  .format1040-wrapper
+  .upload-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .format1040-wrapper
+  .upload-label {
+    font-weight: 600;
+    color: var(--primary-color); /* or adjust to match your style */
+    text-align: left;
+  }
+  
+  .format1040-wrapper
+  .upload-block input[type="file"] {
+    width: 100%;        /* Ensure it fills the block */
+    max-width: 100%;    /* Prevent overflow */
+    box-sizing: border-box; /* Includes padding and border in width */
+  }
+  
+  .format1040-wrapper
+  .upload-block img {
+    display: block;
+    max-width: 350px; /* Adjust as needed */
+    height: auto;
+    border: 1px solid var(--border-input);
+    margin-top: 5px;
+  }
+/*Success card after submited form*/
+.format1040-wrapper
+  div.card-body{
+    background-color: var(--primary-color);
+    text-align: center;
+  }
+  .format1040-wrapper
+  .card-text{
+    color: var(--secondary-text-color);
+    text-align: center;
+  }
+
+  .format1040-wrapper
+  .card-title{
+    font-weight: 600;
+    text-align: center;
+    background-color: var(--primary-color);
+    text-transform: uppercase;
+  }
+  .format1040-wrapper
+  .card{
+    border: 0;
+    padding: 0;
+  }

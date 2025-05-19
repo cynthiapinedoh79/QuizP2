@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pick a Prize - Bookkeeping Bonus">
+    <meta name="description" content="Validate IRS Form 1040">
+
+    <title>IRS f1040 2024</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -13,57 +15,1417 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/format1040.css">
 
-    <title>Pick a Prize - Bookkeeping Bonus</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
 
 </head>
-<body>
-  <h1>Try Your Luck!</h1>
-  <button id="revealBtn">Get Your Prize!</button>
-  <button id="backBtn">🔙 Back</button>
 
-  <div class="card-container hidden">
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">?</div>
-        <div class="card-back">
-          <img src="https://source.unsplash.com/featured/?tax" alt="Tax Offer">
-          <div class="prize-text">25% OFF on Your Tax Report</div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">?</div>
-        <div class="card-back">
-          <img src="https://source.unsplash.com/featured/?consulting" alt="Consultation Offer">
-          <div class="prize-text">50% OFF First Consultation</div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">?</div>
-        <div class="card-back">
-          <img src="https://source.unsplash.com/featured/?finance" alt="Audit Offer">
-          <div class="prize-text">Free Bookkeeping Audit</div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">?</div>
-        <div class="card-back">
-          <img src="https://source.unsplash.com/featured/?guide" alt="Tax Guide">
-          <div class="prize-text">Free Tax Tips Guide</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<body class="d-flex flex-column min-vh-100 format1040-wrapper">
 
-  <script src="assets/js/script.js"></script>
+    <header id="header" class="container seccion">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <h1 id="h1-f1040" class="display-4"><strong>IRS Form-1040 2024</strong></h1>
+                <img src="assets/images/" alt="" class="img-fluid">
+            </div>
+        </div>
+    </header>
+
+    <section id="Fs" class="container section">
+        <div class="row justify-content-center text-center">
+            <div class="col-12 text-left">
+                <form id="my-form" action="/submit-data" method="get" novalidate>
+                    <!--Return on Form 1040-->
+                    <div id="ms-form" class="container-fluid">
+                        <h2>This return can be filed on Form 1040</h2>
+                        <div>
+                            <div id="f1040">
+                                <div>
+                                    <label class="form-check-label" for="filed1040Yes"><input class="form-check-input"
+                                            type="radio" name="filed1040" id="filed1040Yes" value="yes">
+                                        Spanish forms on the screen and printed
+                                    </label>
+                                </div>
+                                <div>
+
+                                    <label class="form-check-label" for="filed1040No"><input class="form-check-input"
+                                            type="radio" name="filed1040" id="filed1040No" value="no">
+                                        Spanish forms printed only
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Main Information-->
+                    <div id="gi-form">
+                        <h4 class="">Main Information Sheet</h4>
+                        <!--General Information-->
+                        <fieldset>
+                            <legend>General Information</legend>
+
+                            <div class="container-fluid" id="g-info">
+                                <div>
+                                    <label for="fname" class="form-label">First Name<span>
+                                            required!</span></label>
+                                    <input class="form-control" id="fname" name="fName" type="text" required>
+                                    <p id="fnameFbk"></p>
+                                </div>
+
+                                <div>
+                                    <label for="fnamei" class="form-label">Initial</label>
+                                    <input class="form-control" id="fnamei" name="fNameI" type="text" value="" readonly>
+                                </div>
+
+                                <div>
+                                    <label for="lname" class="form-label">Last Name<span>
+                                            required!</span></label>
+                                    <input class="form-control" id="lname" name="lName" type="text" required>
+                                </div>
+                                <div>
+                                    <label for="lnamesu" class="form-label">Suffix</label>
+                                    <select id="lnamesu" class="form-select form-control" name="lNameSu">
+                                        <option value="" selected>Select</option>
+                                        <option>Miss</option>
+                                        <option>Mrs.</option>
+                                        <option>Ms.</option>
+                                        <option>Jr.</option>
+                                        <option>Sr.</option>
+                                        <option>Mr.</option>
+                                        <option>I</option>
+                                        <option>II</option>
+                                        <option>III</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="ssn" class="form-label">SSN<span> required!</span></label>
+                                    <input class="form-control" id="ssn" name="ssn" type="text" maxlength="11" required>
+                                    <p id="ssnFbk"></p>
+                                </div>
+                                <div>
+                                    <label for="cssn" class="form-label">Confirm SSN<span> required!</span></label>
+                                    <input class="form-control" id="cssn" name="cSsn" type="text" maxlength="11"
+                                        required>
+                                    <p id="cssnFbk"></p>
+                                </div>
+                                <div>
+                                    <label for="email" class="form-label">Email<span> required!</span></label>
+                                    <input class="form-control" id="email" name="email" type="email" required>
+                                    <p id="emailFbk"></p>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--Joint Information-->
+                        <fieldset>
+                            <legend class="b-legend-left">Joint Information</legend>
+                            <div>
+                                <script>
+                                    function displayJointInfo() {
+                                        const jidiv = document.getElementById("j-info");
+                                        jidiv.style.display = (jidiv.style.display === "none") || (jidiv.style
+                                                .display ===
+                                                "") ?
+                                            "flex" : "none";
+                                    }
+                                </script>
+
+                                <button type="button" onclick="displayJointInfo()" class="form-control"
+                                    id="j-info-btn">Click
+                                    here If filing a JOINT return, enter your spouse's Information</button>
+
+                                <div id="j-info" class="container-fluid" style="display: none;">
+                                    <div>
+                                        <label for="sfname" class="form-label">First Name</label>
+                                        <input class="form-control" id="sfname" name="sfName" type="text">
+                                        <p id="sfnameFbk"></p>
+                                    </div>
+
+                                    <div>
+                                        <label for="sfnamei" class="form-label">Initial</label>
+                                        <input class="form-control" id="sfnamei" name="sfNameI" type="text" readonly>
+                                    </div>
+
+                                    <div>
+                                        <label for="slname" class="form-label">Last Name</label>
+                                        <input class="form-control" id="slname" name="slName" type="text">
+                                    </div>
+
+                                    <div>
+                                        <label for="slnamesu" class="form-label">Suffix</label>
+                                        <select id="slnamesu" class="form-select form-control" name="slNameSu">
+                                            <option value="" selected>Select</option>
+                                            <option>Miss</option>
+                                            <option>Mrs.</option>
+                                            <option>Ms.</option>
+                                            <option>Jr.</option>
+                                            <option>Sr.</option>
+                                            <option>Mr.</option>
+                                            <option>I</option>
+                                            <option>II</option>
+                                            <option>III</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label for="sssn" class="form-label">SSN</label>
+                                        <input class="form-control" id="sssn" name="sSsn" maxlength="11" type="text">
+                                        <p id="sssnFbk"></p>
+                                    </div>
+                                    <div>
+                                        <label for="csssn" class="form-label">Confirm SSN</label>
+                                        <input class="form-control" id="csssn" name="csSsn" maxlength="11" type="text">
+                                        <p id="csssnFbk"></p>
+                                    </div>
+
+                                    <div>
+                                        <label for="semail" class="form-label">Spouse Email</label>
+                                        <input class="form-control" id="semail" name="sEmail" type="email">
+                                        <p id="semailFbk"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--Address Information-->
+                        <fieldset>
+                            <legend>Mailing Address</legend>
+
+                            <div class="container-fluid" id="m-address">
+                                <div>
+                                    <label for="address" class="form-label">Street Address<span>
+                                            required!</span></label>
+                                    <input class="form-control" id="address" name="address" type="text" required>
+                                </div>
+                                <div>
+                                    <label for="zipcode" class="form-label">Zip Code<span>
+                                            required!</span></label>
+                                    <input class="form-control" id="zipcode" name="zipCode" type="number" required>
+                                    <p id="zipcodeFbk"></p>
+                                </div>
+                                <div>
+                                    <label for="city" class="form-label">City<span>
+                                            required!</span></label>
+                                    <input class="form-control" id="city" name="city" type="text" required>
+                                </div>
+                                <div>
+                                    <label for="state" class="form-label">State<span>
+                                            required!</span></label>
+                                    <select id="state" class="form-select form-control" name="state" required>
+                                        <option value="" selected>Select</option>
+                                        <option>AL</option>
+                                        <option>AK</option>
+                                        <option>AZ</option>
+                                        <option>AR</option>
+                                        <option>CA</option>
+                                        <option>CO</option>
+                                        <option>CT</option>
+                                        <option>DE</option>
+                                        <option>FL</option>
+                                        <option>GA</option>
+                                        <option>HI</option>
+                                        <option>ID</option>
+                                        <option>IL</option>
+                                        <option>IN</option>
+                                        <option>IA</option>
+                                        <option>KS</option>
+                                        <option>KY</option>
+                                        <option>LA</option>
+                                        <option>ME</option>
+                                        <option>MD</option>
+                                        <option>MA</option>
+                                        <option>MI</option>
+                                        <option>MN</option>
+                                        <option>MS</option>
+                                        <option>MO</option>
+                                        <option>MT</option>
+                                        <option>NE</option>
+                                        <option>NV</option>
+                                        <option>NH</option>
+                                        <option>NJ</option>
+                                        <option>NM</option>
+                                        <option>NY</option>
+                                        <option>NC</option>
+                                        <option>ND</option>
+                                        <option>OH</option>
+                                        <option>OK</option>
+                                        <option>OR</option>
+                                        <option>PA</option>
+                                        <option>RI</option>
+                                        <option>SC</option>
+                                        <option>SD</option>
+                                        <option>TN</option>
+                                        <option>TX</option>
+                                        <option>UT</option>
+                                        <option>VT</option>
+                                        <option>VA</option>
+                                        <option>WA</option>
+                                        <option>WV</option>
+                                        <option>WI</option>
+                                        <option>WY</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--Phone Number-->
+                        <fieldset>
+                            <legend>Phone Number</legend>
+                            <div class="container-fluid" id="phone-number">
+                                <div>
+                                    <label for="phone" class="form-label">Taxpayer Phone (only
+                                        numbers)<span>
+                                            required!</span></label>
+                                    <input class="form-control" id="phone" name="phone" type="tel" maxlength="14"
+                                        required>
+                                    <p id="phoneFbk"></p>
+
+                                    <label for="callh" class="form-label">Type<span>
+                                            required!</span></label>
+                                    <select id="callh" class="form-select form-control" name="callh" required>
+                                        <option value="" selected>Select</option>
+                                        <option>Morning</option>
+                                        <option>Afernoon</option>
+                                        <option>Evening</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="sphone" class="form-label">Spouse Phone (only numbers)</label>
+                                    <input class="form-control" id="sphone" name="sPhone" type="tel" maxlength="14">
+                                    <p id="sphoneFbk"></p>
+
+                                    <label for="scallh" class="form-label">Type</label>
+                                    <select id="scallh" class="form-select form-control" name="scallh">
+                                        <option value="" selected>Select</option>
+                                        <option>Morning</option>
+                                        <option>Afernoon</option>
+                                        <option>Evening</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--Date of Birth-->
+                        <fieldset>
+                            <legend>Bird Date</legend>
+
+                            <div class="container-fluid" id="birth-date">
+                                <div>
+                                    <label for="dob" class="form-label">Birth Date<span>
+                                            required!</span></label>
+                                    <input class="form-control" id="dob" name="doB" type="date" required>
+                                    <p id="dobFbk"></p>
+                                    <script>
+                                        function isUnder18() {
+                                            const dobFbk = document.getElementById("dobFbk");
+                                            const dobString = document.getElementById("dob").value;
+                                            if (!dobString) {
+                                                dobFbk.innerText = `Invalid date`;
+                                                dobFbk.className = 'error';
+                                            }
+
+                                            //Convert the string to a Date object
+                                            const dob = new Date(dobString);
+                                            const today = new Date();
+                                            //Calculate the age
+                                            let age = today.getFullYear() - dob.getFullYear();
+                                            const monthDiff = today.getMonth() - dob.getMonth();
+                                            const dayDiff = today.getDate() - dob.getDate();
+
+                                            //Check if the birthday has not occurred yet this year
+                                            if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                                                age--;
+                                            }
+                                            const rAge = age < 18 ? true : false;
+                                            if (rAge) {
+                                                dobFbk.innerText = `Age < 18`;
+                                                dobFbk.className = 'error';
+                                            } else {
+                                                dobFbk.innerText = age;
+                                                dobFbk.className = 'success';
+                                            }
+                                        }
+                                    </script>
+                                    <button type="button" onclick="isUnder18()" id="vage">Verify Age</button>
+                                </div>
+                                <div>
+
+                                    <label for="sdob" class="form-label">Spouse Birth Date</label>
+                                    <input class="form-control" id="sdob" name="sdoB" type="date">
+                                    <p id="sdobFbk"></p>
+
+                                    <script>
+                                        function isSUnder18() {
+                                            const sdobFbk = document.getElementById("sdobFbk");
+                                            const sdobString = document.getElementById("sdob").value;
+                                            if (!sdobString) {
+                                                sdobFbk.innerText = `Invalid date`;
+                                                sdobFbk.className = 'error';
+                                            }
+
+                                            //Convert the string to a Date object
+                                            const sdob = new Date(sdobString);
+                                            const today = new Date();
+                                            //Calculate the Spouse Age
+                                            let sAge = today.getFullYear() - sdob.getFullYear();
+                                            const sMonthDiff = today.getMonth() - sdob.getMonth();
+                                            const sDayDiff = today.getDate() - sdob.getDate();
+
+                                            //Check if the birthday has not occurred yet this year
+                                            if (sMonthDiff < 0 || (sMonthDiff === 0 && sDayDiff < 0)) {
+                                                sAge--;
+                                            }
+                                            const srAge = sAge < 18 ? true : false;
+                                            if (srAge) {
+                                                sdobFbk.innerText = `Age < 18`;
+                                                sdobFbk.className = 'error';
+                                            } else {
+                                                sdobFbk.innerText = sAge;
+                                                sdobFbk.className = 'success';
+                                            }
+                                        }
+                                    </script>
+                                    <button type="button" onclick="isSUnder18()" id="svage">Verify Spouse Age</button>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                        <!--Occupation-->
+                        <fieldset>
+                            <legend>Occupation</legend>
+                            <div class="container-fluid" id="occupation">
+                                <div>
+                                    <label for="occ" class="form-label">Occupation<span>
+                                            required!</span></label>
+                                    <input class="form-control" id="occ" name="occ" type="text" required>
+                                </div>
+                                <div>
+                                    <label for="socc" class="form-label">Spouse Occupation</label>
+                                    <input class="form-control" id="socc" name="socc" type="text">
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--Foreign Address-->
+                        <fieldset>
+                            <legend class="b-legend-left">Foreign Address</legend>
+                            <div>
+                                <script>
+                                    function fAddInfo() {
+                                        const fadiv = document.getElementById("f-address");
+                                        fadiv.style.display = (fadiv.style.display === "none") || (fadiv.style
+                                                .display ===
+                                                "") ?
+                                            "flex" : "none";
+                                    }
+                                </script>
+
+                                <button type="button" onclick="fAddInfo()" class="form-control" id="fa-info-btn">Foreign
+                                    Address</button>
+
+                                <div class="container-fluid" id="f-address" style="display: none;">
+
+                                    <div>
+                                        <label for="faddress" class="form-label">Forein Street Address</label>
+                                        <input class="form-control" id="faddress" name="faddress" type="text">
+                                    </div>
+                                    <div>
+                                        <label for="fzipcode" class="form-label">Forein Zip Code</label>
+                                        <input class="form-control" id="fzipcode" name="fzipcode" type="number">
+                                    </div>
+                                    <div>
+                                        <label for="fcity" class="form-label">City</label>
+                                        <input class="form-control" id="fcity" name="fcity" type="text">
+                                    </div>
+                                    <div>
+                                        <label for="fstate" class="form-label">State</label>
+                                        <input class="form-control" id="fstate" name="fstate" type="text">
+                                    </div>
+                                    <div>
+                                        <label for="fcountry" class="form-label">Forein Country</label>
+                                        <input class="form-control" id="fcountry" name="fcountry" type="text">
+                                    </div>
+                                    <div>
+                                        <label for="fphone" class="form-label">Forein Phone</label>
+                                        <input class="form-control" id="fphone" name="fphone" type="number">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <!--Taxpayer Information-->
+                    <div id="tpi-form">
+                        <h4>Taxpayer Information</h4>
+
+                        <fieldset>
+                            <div class="box container-fluid">
+                                <p>Special processing</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="specialProcessing"
+                                        id="specialYes" value="yes" required>
+                                    <label class="form-check-label" for="specialYes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="specialProcessing" id="specialNo"
+                                        value="no">
+                                    <label class="form-check-label" for="specialNo">No</label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="box container-fluid">
+                                <p>Did the taxpayer's address change since last year's return?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="addressChanged" id="addressYes"
+                                        value="yes" required>
+                                    <label class="form-check-label" for="addressYes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="addressChanged" id="addressNo"
+                                        value="no">
+                                    <label class="form-check-label" for="addressNo">No</label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="box container-fluid">
+                                <p>Are you excluding Puerto Rico income this tax return?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="excludePR" id="excludeYes"
+                                        value="yes" required>
+                                    <label class="form-check-label" for="excludeYes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="excludePR" id="excludeNo"
+                                        value="no">
+                                    <label class="form-check-label" for="excludeNo">No</label>
+                                </div>
+
+
+                                <div id="exprContainer">
+                                    <p>If "Yes", enter the amount of income excluded</p>
+                                    <label for="expr" class="form-label"></label>
+                                    <span class="input-group-text">$</span>
+                                    <input class="form-control" id="expr" name="expr" type="number"
+                                        aria-label="Amount (to the nearest dollar)">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="box container-fluid">
+                                <p>Did the taxpayer, spouse, or any dependent receive insurance through the
+                                    Markeplace?See
+                                    Form-8962</p>
+                                <p></p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="receiveMarketplace"
+                                        id="receiveMarketplaceYes" value="yes" required>
+                                    <label class="form-check-label" for="receiveMarketplaceYes">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="form-check">
+
+                                    <input class="form-check-input" type="radio" name="receiveMarketplace"
+                                        id="receiveMarketplaceNo" value="no">
+                                    <label class="form-check-label" for="receiveMarketplaceNo">
+                                        No
+                                    </label>
+                                </div>
+
+                                <div class="form-check" id="rrf">
+                                    <p>If the return was rejected for F8962-070 (e-file database indicates that Form
+                                        8962 or
+                                        a binary attachment with an explanation must be attached)</p>
+
+                                    <div>
+                                        <br>
+                                        <label class="form-check-label" for="noF8962"><input class="form-check-input"
+                                                type="checkbox" value="" name="noF8962" id="noF8962">To attach a PDF
+                                            with an
+                                            explanation of why
+                                            Form 8962 is not being filed with the return</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="box container-fluid">
+                                <p>Check if blind</p>
+                                <p id="blindFbk"></p>
+                                <div class="form-check" id="ifblind">
+                                    <div>
+                                        <label class="form-check-label" for="blind"><input class="form-check-input"
+                                                type="checkbox" value="" name="blind" id="blind">Taxpayer</label>
+
+
+                                    </div>
+                                    <div>
+                                        <label class="form-check-label" for="blindSp"><input class="form-check-input"
+                                                type="checkbox" value="" name="blindSp" id="blindSp">Spouse</label>
+                                        <p id="blindSpFbk"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="box container-fluid">
+                                <p>Check if totally and permanently disabled</p>
+                                <div class="form-check" id="ifdisabled">
+                                    <div>
+                                        <label class="form-check-label" for="disable"><input class="form-check-input"
+                                                type="checkbox" value="" name="disable" id="disable">Taxpayer</label>
+
+                                    </div>
+                                    <div>
+                                        <label class="form-check-label" for="disableSp"><input class="form-check-input"
+                                                type="checkbox" value="" name="disableSp" id="disableSp">Spouse</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="box container-fluid">
+                                <p>Date of death, ONLY if in 2024 or 2025</p>
+                                <div class="form-check" id="ifdead">
+                                    <div>
+                                        <label for="dd" class="form-label">Taxpayer</label>
+                                        <input class="form-control" id="dd" name="dd" type="date">
+                                    </div>
+                                    <div>
+                                        <label for="sdd" class="form-label">Spouse</label>
+                                        <input class="form-control" id="sdd" name="sdd" type="date">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="box container-fluid">
+                                <p>This tax return is being filed by</p>
+                                <div class="form-check" id="trfby">
+                                    <div>
+                                        <label class="form-check-label" for="survivingSp"><input
+                                                class="form-check-input" type="checkbox" value="" name="survivingSp"
+                                                id="survivingSp">Surviving spouse</label>
+
+                                    </div>
+                                    <div>
+                                        <label class="form-check-label" for="someoneElse"><input
+                                                class="form-check-input" type="checkbox" value="" name="someoneElse"
+                                                id="someoneElse">Someone else</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Presidential Election Campain</legend>
+                            <div class="box container-fluid">
+                                <p>Check here if you, or your spouse if filing a join return, want $3 to go to this fund
+                                </p>
+                                <p id="filingJoint3Fbk"></p>
+                                <div class="form-check" id="pec">
+                                    <div>
+                                        <label class="form-check-label" for="filingJoint3"><input
+                                                class="form-check-input" type="checkbox" value="" name="filingJoint3"
+                                                id="filingJoint3">You</label>
+                                    </div>
+                                    <div>
+                                        <label class="form-check-label" for="filingJoint3Sp"><input
+                                                class="form-check-input" type="checkbox" value="" name="filingJoint3Sp"
+                                                id="filingJoint3Sp">Spouse</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!--Filing Status and Exemptions-->
+                    <div id="fsae">
+                        <h4>Filing Status and Exemptions</h4>
+                        <p id="filingStatusFbk"></p>
+                        <!--Part 1-->
+                        <fieldset>
+                            <div class="box container-fluid">
+                                <p>1</p>
+                                <div class="form-check">
+                                    <label class="form-check-label" for="single"><input class="form-check-input"
+                                            type="radio" name="filingStatus" id="single" value="single" required>Single
+                                    </label>
+
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--Part 2-->
+                        <fieldset>
+                            <div class="box container-fluid">
+                                <p>2</p>
+                                <div class="form-check">
+                                    <label class="form-check-label" for="marriedFJointly"><input
+                                            class="form-check-input" type="radio" name="filingStatus"
+                                            id="marriedFJointly" value="">Married
+                                        filing
+                                        jointly (even
+                                        if only
+                                        one had income)
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--Part 3-->
+                        <fieldset>
+                            <div id="mfs" class="box container-fluid">
+                                <p>3</p>
+                                <div class="form-check">
+                                    <label class="form-check-label" for="marriedFSeparately"><input
+                                            class="form-check-input" type="radio" name="filingStatus"
+                                            id="marriedFSeparately" value="separate">Married
+                                        filing
+                                        separately
+                                    </label>
+                                    <p id="marriedFSeparatelyFbk"></p>
+                                </div>
+
+                                <fieldset>
+                                    <div class="box container-fluid">
+                                        <div class="form-check">
+                                            <label for="separatelyspfname" class="form-label">Spouse First Name</label>
+                                            <input class="form-control" id="separatelyspfname" name="separatelyspfname"
+                                                type="text">
+                                        </div>
+
+                                        <div class="form-check">
+                                            <label for="separatelysplname" class="form-label">Spouse Last Name</label>
+                                            <input class="form-control" id="separatelysplname" name="separatelysplname"
+                                                type="text">
+                                        </div>
+
+                                        <div class="form-check">
+                                            <label for="separatelyspssn" class="form-label">Spouse SSN</label>
+                                            <input class="form-control" id="separatelyspssn" name="separatelyspssn"
+                                                maxlength="11" type="text">
+                                            <p id="separatelyspssnFbk"></p>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <div class="box container-fluid">
+                                        <div id="snra" class="form-check">
+                                            <label class="form-check-label" for="nonresidenSp"><input
+                                                    class="form-check-input" type="checkbox" value=""
+                                                    name="nonresidenSp" id="nonresidenSp">Check here if the spouse
+                                                is a nonresident alien</label>
+
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="box container-fluid">
+
+                                        <div id="slwy">
+                                            <p>Did your spouse ever live with you in 2024?</p>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="spWyou2024"
+                                                    id="spWyou2024Yes" value="yes">
+                                                <label class="form-check-label" for="spWyou2024Yes">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+
+                                                <input class="form-check-input" type="radio" name="spWyou2024"
+                                                    id="spWyou2024No" value="no">
+                                                <label class="form-check-label" for="spWyou2024No">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div id="aj30">
+                                            <p>If "Yes", did you and your spouse live together at anytime after June 30,
+                                                2024?
+                                            </p>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="afterJune302024"
+                                                    id="afterJune302024Yes" value="yes">
+                                                <label class="form-check-label" for="afterJune302024Yes">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+
+                                                <input class="form-check-input" type="radio" name="afterJune302024"
+                                                    id="afterJune302024No" value="no">
+                                                <label class="form-check-label" for="afterJune302024No">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <div class="box container-fluid">
+
+                                        <div id="comm-m">
+                                            <p>Married filing separately, only. If the state in the address above is a
+                                                community property state (AZ, CA, ID, LA, NV, NM, TX, WA, WI), or a
+                                                return is
+                                                being
+                                                filed to one of these states, answer the follow questions</p>
+                                            <p>Military. Is this your home of record?</p>
+                                            <p>If "Yes", fill in Form 8958</p>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="commPropertyState"
+                                                    id="commPropertyStateYes" value="yes">
+                                                <label class="form-check-label" for="commPropertyStateYes">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+
+                                                <input class="form-check-input" type="radio" name="commPropertyState"
+                                                    id="commPropertyStateNo" value="no">
+                                                <label class="form-check-label" for="commPropertyStateNo">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div id="comm-o">
+                                            <p>Others. Are you a resident of this community property state?</p>
+                                            <p> If "Yes", fill in Form 8958 and use Form 1040. If "No", you CANNOT
+                                                e-file
+                                                this
+                                                return.</p>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="residetOfCommSte"
+                                                    id="residetOfCommSteYes" value="yes">
+                                                <label class="form-check-label" for="residetOfCommSteYes">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+
+                                                <input class="form-check-input" type="radio" name="residetOfCommSte"
+                                                    id="residetOfCommSteNo" value="no">
+                                                <label class="form-check-label" for="residetOfCommSteNo">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </fieldset>
+                        <!--Part 4-->
+                        <fieldset>
+                            <div id="hohQualifying">
+                                <div class="box container-fluid">
+                                    <p>4</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="headOfHousehold"
+                                            id="headOfHousehold">
+                                        <label class="form-check-label" for="headOfHousehold">Head of household (with
+                                            qualifying
+                                            person).
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <fieldset>
+                                    <div class="box container-fluid">
+                                        <p>If the qualifying person is a child but <strong>NOT</strong> your dependent,
+                                            enter
+                                            the
+                                            child's name and
+                                            social security number.</p>
+                                        <div class="form-check">
+                                            <label for="childName" class="form-label">Child's Name</label>
+                                            <input class="form-control" id="childName" name="childName" type="text">
+                                        </div>
+                                        <div class="form-check">
+                                            <label for="childSsn" class="form-label">Child's SSN</label>
+                                            <input class="form-control" id="childSsn" name="childSsn" maxlength="11"
+                                                type="text" placeholder="Child's SSN">
+                                            <p id="childSsnFbk"></p>
+                                        </div>
+                                        <p>A self-supportive child who lives with you IS NOT a qualifying person</p>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </fieldset>
+
+                        <!--Part 5-->
+                        <div class="box container-fluid" id="part5">
+                            <fieldset>
+                                <div class="box container-fluid">
+                                    <p>5</p>
+                                    <div class="form-check">
+
+                                        <label class="form-check-label" for="qualifyingSurvSp"><input
+                                                class="form-check-input" type="radio" name="qualifyingSurvSp"
+                                                id="qualifyingSurvSp">Qualifying surviving
+                                            spouse
+                                            (with
+                                            qualifying child)
+                                        </label>
+                                    </div>
+                                </div>
+                                <fieldset>
+                                    <div class="box container-fluid">
+                                        <div class="form-check">
+                                            <label for="ysd" class="form-label">Year spouse died (2022 or 2023
+                                                only)</label>
+                                            <input class="form-control" id="ysd" name="ysd" type="date">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <div class="box container-fluid">
+                                        <p>If the qualifying child is <strong>not</strong> your dependent, enter the
+                                            child's
+                                            name and social security number.</p>
+
+                                        <div class="form-check">
+                                            <label for="sdchnd-name" class="form-label">Child's Name</label>
+                                            <input class="form-control" id="sdchnd-name" name="sdchnd-name" type="text">
+                                        </div>
+                                        <div class="form-check">
+                                            <label for="sdchnd-ssn" class="form-label">Child's SSN</label>
+                                            <input class="form-control" id="sdchnd-ssn" name="sdchnd-ssn" maxlength="11"
+                                                type="text" placeholder="Child's SSN">
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div id="nonrSp" class="box container-fluid">
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="nonrOrDualSp"><input
+                                                    class="form-check-input" type="checkbox" value=""
+                                                    name="nonrOrDualSp" id="nonrOrDualSp">Check here if
+                                                treating a
+                                                nonresident alien or dual-status alien spouse as a U.S.
+                                                resident for the entire tax year</label>
+
+                                        </div>
+
+                                        <div class="box container-fluid">
+                                            <p>Enter their name (see instructions and attach
+                                                statement if requiered)</p>
+                                            <div class="form-check">
+                                                <label for="spnonr-name" class="form-label">Name</label>
+                                                <input class="form-control" id="spnonr-name" name="spnonr-name"
+                                                    type="text">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </fieldset>
+
+                            </fieldset>
+                        </div>
+                        <!--Part 6-->
+                        <div class="box container-fluid" id="part6">
+                            <fieldset>
+                                <div class="box container-fluid">
+                                    <p>6</p>
+                                    <p><strong>EXEMPTIONS</strong></p>
+                                    <p id="exempFbk"></p>
+                                </div>
+
+                                <div id="exemp" class="box container-fluid">
+                                    <p>a</p>
+
+                                    <label class="form-check-label" for="exempYoursef">
+                                        <input class="form-check-input" type="checkbox" value="" name="exempYoursef"
+                                            id="exempYoursef">Yourself
+                                    </label>
+
+
+                                    <p>b</p>
+                                    <label class="form-check-label" for="exempSp"><input class="form-check-input"
+                                            type="checkbox" value="" name="exempSp" id="exempSp">Spouse</label>
+
+
+
+                                    <label class="form-check-label" for="nbxc">Number of boxes checked on 6a and
+                                        6b<input class="form-control" id="nbxc" name="nbxc" type="number"
+                                            readonly></label>
+
+                                </div>
+
+                                <div id="chk-if" class="box container-fluid">
+
+                                    <p>Check if</p>
+                                    <p id="chk-ifFbk"></p>
+
+                                    <fieldset>
+                                        <div class="box container-fluid">
+
+                                            <p>(a)</p>
+                                            <div class="form-check">
+                                                <label class="form-check-label" for="claimDiffPerson"><input
+                                                        class="form-check-input" type="checkbox" value=""
+                                                        name="claimDiffPerson" id="claimDiffPerson">You
+                                                    can be
+                                                    claimed on
+                                                    another
+                                                    person's return</label>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <div class="box container-fluid">
+
+                                            <p>(b)</p>
+                                            <div class="form-check">
+                                                <label class="form-check-label" for="fS2DiffPersonSp"><input
+                                                        class="form-check-input" type="checkbox" value=""
+                                                        name="fS2DiffPersonSp" id="fS2DiffPersonSp">Filing status 2
+                                                    and
+                                                    spouse
+                                                    can be claimed on another person's return </label>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <div class="box container-fluid">
+                                            <p>(c)</p>
+                                            <p id="chks4Fbk"></p>
+                                            <div class="form-check">
+                                                <label class="form-check-label" for="fS4nonrSp"><input
+                                                        class="form-check-input" type="checkbox" value="4"
+                                                        name="fS4nonrSp" id="fS4nonrSp">You
+                                                    are using
+                                                    filing
+                                                    status 4
+                                                    and claiminng nonresident alien spouse </label>
+                                            </div>
+                                            <div class="box container-fluid" id="exemfs4">
+                                                <div class="form-check">
+                                                    <label for="s4sfname" class="form-label">First Name</label>
+                                                    <input class="form-control" id="s4sfname" name="s4sfname"
+                                                        type="text">
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label for="s4slname" class="form-label">Last Name</label>
+                                                    <input class="form-control" id="s4slname" name="s4slname"
+                                                        type="text">
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label for="s4sssn" class="form-label">SSN</label>
+                                                    <input class="form-control" id="s4sssn" name="s4sssn" maxlength="11"
+                                                        type="text">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+
+
+                                <div id="dp-ndp" class="box container-fluid">
+
+                                    <p>c</p>
+                                    <p><strong>DEPENDENTS / NON-DEPENDENTS</strong></p>
+                                    <div class="box container-fluid">
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="flatFeePerD"><input
+                                                    class="form-check-input" type="checkbox" value="" name="flatFeePerD"
+                                                    id="flatFeePerD">
+                                                Check here to charge a flat
+                                                fee
+                                                for dependent instead of a fee per dependent.</label>
+
+                                        </div>
+
+                                        <p>The ODC column indicates that the dependent qualifies for the credit for
+                                            other
+                                            dependents.
+                                        </p>
+                                        <p>If a dependent's social security card says "Not Valid for Employment", that
+                                            dependent is not
+                                            eligeble for the child tax credit.</p>
+                                        <p>If the CTC box is marked for a dependent with the type of social security
+                                            card,
+                                            overrite the
+                                            CTC checkbox and uncheck the box.</p>
+                                    </div>
+
+                                    <div id="exemDpNdp" class="box container-fluid">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-bordered">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>First Name</th>
+                                                        <th>Last Name</th>
+                                                        <th>Date of bird</th>
+                                                        <th>Age</th>
+                                                        <th>SSN</th>
+                                                        <th>Relation to you</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td><input class="form-control" id="exempDpfname"
+                                                                name="exempDpfname" type="text">
+                                                        </td>
+                                                        <td><input class="form-control" id="exempDplname"
+                                                                name="exempDplname" type="text">
+                                                        </td>
+                                                        <td><input class="form-control" id="exempDpdob"
+                                                                name="exempDpdob" type="date"></td>
+                                                        <td><input class="form-control" id="exempDpage"
+                                                                name="exempDpage" type="number">
+                                                        </td>
+                                                        <td><input class="form-control" id="exempDpSsn"
+                                                                name="exempDpSsn" maxlength="11" type="text">
+                                                        </td>
+                                                        <td><input class="form-control" id="exempDpRelation"
+                                                                name="exempDpRelation" type="text">
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td><input class="form-control" id="exempDpfname2"
+                                                                name="exempDpfname2" type="text">
+                                                        </td>
+                                                        <td><input class="form-control" id="exempDplname2"
+                                                                name="exempDplname2" type="text">
+                                                        </td>
+                                                        <td><input class="form-control" id="exempDpdob2"
+                                                                name="exempDpdob2" type="date"></td>
+                                                        <td><input class="form-control" id="exempDpage2"
+                                                                name="exempDpage2" type="number">
+                                                        </td>
+                                                        <td><input class="form-control" id="exempDpSsn2"
+                                                                name="exempDpSsn2" maxlength="11" type="text">
+                                                        </td>
+                                                        <td><input class="form-control" id="exempDpRelation2"
+                                                                name="exempDpRelation2" type="text">
+                                                        </td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table class="table table-hover table-bordered">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Mos in home</th>
+                                                        <th>Code</th>
+                                                        <th>DC</th>
+                                                        <th>EIC</th>
+                                                        <th>CTC</th>
+                                                        <th>ODC</th>
+                                                        <th>Identity theft PIN</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>1</th>
+                                                        <td><input class="form-control" id="dmih" name="dmih"
+                                                                type="number">
+                                                        </td>
+                                                        <td><input class="form-control" id="dcode" name="dcode"
+                                                                type="number">
+                                                        </td>
+                                                        <td><input class="form-check-input" type="checkbox" value="">
+                                                        </td>
+                                                        <td><input class="form-check-input" type="checkbox" value="">
+                                                        </td>
+                                                        <td><input class="form-check-input" type="checkbox" value="">
+                                                        </td>
+                                                        <td><input class="form-check-input" type="checkbox" value="">
+                                                        </td>
+                                                        <td><input class="form-control" id="ditpin" name="ditpin"
+                                                                type="number">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>2</th>
+                                                        <td><input class="form-control" id="dmih2" name="dmih2"
+                                                                type="number">
+                                                        </td>
+                                                        <td><input class="form-control" id="dcode2" name="dcode2"
+                                                                type="number">
+                                                        </td>
+                                                        <td><input class="form-check-input" type="checkbox" value="">
+                                                        </td>
+                                                        <td><input class="form-check-input" type="checkbox" value="">
+                                                        </td>
+                                                        <td><input class="form-check-input" type="checkbox" value="">
+                                                        </td>
+                                                        <td><input class="form-check-input" type="checkbox" value="">
+                                                        </td>
+                                                        <td><input class="form-control" id="ditpin2" name="ditpin2"
+                                                                type="number">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                    <fieldset>
+                                        <div id="stol" class="box container-fluid">
+                                            <label for="dsol" class="form-label">State of living</label>
+                                            <select id="dsol" class="form-select form-control" name="dsol">
+                                                <option value="" selected>Select</option>
+                                                <option>AL</option>
+                                                <option>AK</option>
+                                                <option>AZ</option>
+                                                <option>AR</option>
+                                                <option>CA</option>
+                                                <option>CO</option>
+                                                <option>CT</option>
+                                                <option>DE</option>
+                                                <option>FL</option>
+                                                <option>GA</option>
+                                                <option>HI</option>
+                                                <option>ID</option>
+                                                <option>IL</option>
+                                                <option>IN</option>
+                                                <option>IA</option>
+                                                <option>KS</option>
+                                                <option>KY</option>
+                                                <option>LA</option>
+                                                <option>ME</option>
+                                                <option>MD</option>
+                                                <option>MA</option>
+                                                <option>MI</option>
+                                                <option>MN</option>
+                                                <option>MS</option>
+                                                <option>MO</option>
+                                                <option>MT</option>
+                                                <option>NE</option>
+                                                <option>NV</option>
+                                                <option>NH</option>
+                                                <option>NJ</option>
+                                                <option>NM</option>
+                                                <option>NY</option>
+                                                <option>NC</option>
+                                                <option>ND</option>
+                                                <option>OH</option>
+                                                <option>OK</option>
+                                                <option>OR</option>
+                                                <option>PA</option>
+                                                <option>RI</option>
+                                                <option>SC</option>
+                                                <option>SD</option>
+                                                <option>TN</option>
+                                                <option>TX</option>
+                                                <option>UT</option>
+                                                <option>VT</option>
+                                                <option>VA</option>
+                                                <option>WA</option>
+                                                <option>WV</option>
+                                                <option>WI</option>
+                                                <option>WY</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset>
+                                        <p>Did you live in more than one states?
+                                            Which</p>
+                                        <div id="dmsol" class="box container-fluid">
+                                            <label for="dm1sol" class="form-label"></label>
+                                            <select id="dm1sol" class="form-select form-control" name="dm1sol">
+                                                <option value="" selected>Select</option>
+                                                <option>AL</option>
+                                                <option>AK</option>
+                                                <option>AZ</option>
+                                                <option>AR</option>
+                                                <option>CA</option>
+                                                <option>CO</option>
+                                                <option>CT</option>
+                                                <option>DE</option>
+                                                <option>FL</option>
+                                                <option>GA</option>
+                                                <option>HI</option>
+                                                <option>ID</option>
+                                                <option>IL</option>
+                                                <option>IN</option>
+                                                <option>IA</option>
+                                                <option>KS</option>
+                                                <option>KY</option>
+                                                <option>LA</option>
+                                                <option>ME</option>
+                                                <option>MD</option>
+                                                <option>MA</option>
+                                                <option>MI</option>
+                                                <option>MN</option>
+                                                <option>MS</option>
+                                                <option>MO</option>
+                                                <option>MT</option>
+                                                <option>NE</option>
+                                                <option>NV</option>
+                                                <option>NH</option>
+                                                <option>NJ</option>
+                                                <option>NM</option>
+                                                <option>NY</option>
+                                                <option>NC</option>
+                                                <option>ND</option>
+                                                <option>OH</option>
+                                                <option>OK</option>
+                                                <option>OR</option>
+                                                <option>PA</option>
+                                                <option>RI</option>
+                                                <option>SC</option>
+                                                <option>SD</option>
+                                                <option>TN</option>
+                                                <option>TX</option>
+                                                <option>UT</option>
+                                                <option>VT</option>
+                                                <option>VA</option>
+                                                <option>WA</option>
+                                                <option>WV</option>
+                                                <option>WI</option>
+                                                <option>WY</option>
+                                            </select>
+                                            <label for="dm2sol" class="form-label">,</label>
+                                            <select id="dm2sol" class="form-select form-control" name="dm2sol">
+                                                <option value="" selected>Select</option>
+                                                <option>AL</option>
+                                                <option>AK</option>
+                                                <option>AZ</option>
+                                                <option>AR</option>
+                                                <option>CA</option>
+                                                <option>CO</option>
+                                                <option>CT</option>
+                                                <option>DE</option>
+                                                <option>FL</option>
+                                                <option>GA</option>
+                                                <option>HI</option>
+                                                <option>ID</option>
+                                                <option>IL</option>
+                                                <option>IN</option>
+                                                <option>IA</option>
+                                                <option>KS</option>
+                                                <option>KY</option>
+                                                <option>LA</option>
+                                                <option>ME</option>
+                                                <option>MD</option>
+                                                <option>MA</option>
+                                                <option>MI</option>
+                                                <option>MN</option>
+                                                <option>MS</option>
+                                                <option>MO</option>
+                                                <option>MT</option>
+                                                <option>NE</option>
+                                                <option>NV</option>
+                                                <option>NH</option>
+                                                <option>NJ</option>
+                                                <option>NM</option>
+                                                <option>NY</option>
+                                                <option>NC</option>
+                                                <option>ND</option>
+                                                <option>OH</option>
+                                                <option>OK</option>
+                                                <option>OR</option>
+                                                <option>PA</option>
+                                                <option>RI</option>
+                                                <option>SC</option>
+                                                <option>SD</option>
+                                                <option>TN</option>
+                                                <option>TX</option>
+                                                <option>UT</option>
+                                                <option>VT</option>
+                                                <option>VA</option>
+                                                <option>WA</option>
+                                                <option>WV</option>
+                                                <option>WI</option>
+                                                <option>WY</option>
+                                            </select>
+
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <p>Attach SSN copy and valid ID in US</p>
+                                        <div class="box container-fluid">
+
+
+                                            <div id="atti" class="upload-section">
+                                                <div id="uploadSSN" class="upload-block">
+                                                    <label for="ssnPhoto" class="upload-label">Upload your SSN
+                                                        copy:</label>
+                                                    <input type="file" id="ssnPhoto" name="ssnPhoto" accept="image/*"
+                                                        class="form-control">
+                                                    <br>
+                                                    <img id="ssnPreview" src="#" alt="SSN Preview"
+                                                        style="display:none;">
+                                                </div>
+                                                <div id="uploadId" class="upload-block">
+                                                    <label for="idPhoto" class="upload-label">Upload your ID
+                                                        copy:</label>
+                                                    <input type="file" id="idPhoto" name="idPhoto" accept="image/*"
+                                                        class="form-control">
+                                                    <br>
+                                                    <img id="idPreview" src="#" alt="ID Preview" style="display:none;">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </fieldset>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+                <!-- Success Card (hidden by default) -->
+                <div id="successCard" class="card mt-4 alert alert-success" style="display: none;">
+                    <div class="card-body card-text">
+                        <h4 class="card-title">Success!</h4>
+                        <h6 class="card-text">Form submitted successfully!</h6>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <br>
+
+
+
+    <script src="assets/js/format1040.js"></script>
+    <script src="https://kit.fontawesome.com/2055840f51.js" crossorigin="anonymous"></script>
+
 </body>
+
 </html>
 
 
